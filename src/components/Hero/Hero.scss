@@ -1,0 +1,20 @@
+.default-hero,
+.menu-hero,
+.blog-hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../../images/pexels-cottonbro-3298637.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-text);
+}
+
+.menu-hero {
+  background-image: url(../../images/pexels-visionpic-net-332090.jpg);
+}
+
+.blog-hero {
+  background-image: url(../../images/pexels-pineapple-supply-co-1392591.jpg);
+}

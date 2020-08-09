@@ -1,0 +1,27 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+  height: 10vh;
+  background-color: hsla(0, 0, 0, 0.3);
+  z-index: 2;
+
+  &__links {
+    display: flex;
+    list-style: none;
+  }
+
+  &__link {
+    margin: 0 1.3em;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--color-text);
+
+    &--active {
+      color: var(--color-primary);
+    }
+  }
+}
