@@ -6,43 +6,38 @@ const DishContext = createContext();
 class DishProvider extends Component {
   state = {
     dishes: [],
-    sortedDishes: [],
+    filteredDishes: [],
     topDishes: [],
     loading: true,
   };
 
   getData = () => {
     let dishes = this.formatData(items);
-    console.log(dishes);
     let topDishes = dishes.filter((dish) => dish.topdish);
     this.setState({
       dishes,
-      sortedDishes: dishes,
+      filteredDishes: dishes,
       topDishes,
       loading: false,
     });
   };
 
   formatData = (items) => {
-    let tempItems = items.map((item) => {
+    let tempDishes = items.map((item) => {
       let id = item.sys.id;
-      let images = item.fields.images.map((image) => image.fields.file.url);
-      let dish = { ...item.fields, id, images };
-      return dish;
+      let images = item.fields.images.map((img) => img.fields.file.url);
+      return { ...item.fields, id, images };
     });
-    return tempItems;
+    return tempDishes;
   };
 
   componentDidMount() {
     this.getData();
   }
+
   render() {
     return (
-      <DishContext.Provider
-        value={{
-          ...this.state,
-        }}
-      >
+      <DishContext.Provider value={{ ...this.state }}>
         {this.props.children}
       </DishContext.Provider>
     );

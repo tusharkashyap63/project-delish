@@ -3,6 +3,7 @@ import Title from '../Title/Title';
 import './TopDishes.scss';
 import { DishContext } from '../../DishContext';
 import DishCard from '../DishCard/DishCard';
+import GridContainer from '../GridContainer/GridContainer';
 
 function TopDishes() {
   const dishContext = useContext(DishContext);
@@ -14,7 +15,7 @@ function TopDishes() {
   return (
     <section className='topDishes'>
       <Title>Top Dishes</Title>
-      <div className='topDishes__container'>{loading ? 'Loading' : dishes}</div>
+      <GridContainer>{loading ? 'Loading' : dishes}</GridContainer>
     </section>
   );
 }

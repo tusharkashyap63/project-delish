@@ -1,10 +1,4 @@
 .topDishes {
-  padding: 0 4em;
-  background-color: #eeefee;
-
-  &__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 1.2em;
-  }
+  background-color: #eff1ef;
+  padding-bottom: 5em;
 }
